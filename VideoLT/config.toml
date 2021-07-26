@@ -1,0 +1,164 @@
+# Site settings
+baseurl = "//VideoLT.github.io/"
+languageCode = "en-us"
+title = "VideoLT"
+theme = "hugo-freelancer-theme"
+
+
+[params]
+
+    # You can use Markdown syntax for urls [text](//url.to/source) for
+    # most longer texts.
+
+    # To provide some metadata for search engines feel free to add a few
+    # information about you and your website.
+    name = "VideoLT: Large-scale Long-tailed Video Recognition"
+    description = "My awesome description"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'email' below
+    # - upload the generated site to your server
+    # - send a dummy email youself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+    email = "zhangxing18@fudan.edu.cn"
+
+    # Custom assets
+	custom_css = []
+	custom_js  = []
+
+    [params.navigation]
+        brand = "VIDEOLT"
+
+
+    [params.header]
+        # Copy your own image into './static/img/'' if you wish
+        image = "./"
+        name = "VideoLT: Large-scale Long-tailed Video Recognition"
+        subtitle = ""
+        [params.header.button]
+            text = "Paper"
+            link = "//arxiv.org/abs/2105.02668"
+            icon = "download"
+        
+        [params.header.github]
+            text = "Github"
+            link = "//github.com/17Skye17/VideoLT"
+            icon = "github"
+
+    [params.portfolio]
+        # All projects defined in their own files. You can find example projects
+        # at 'exampleSite/data/projects'. Copy the 'projects' folder into the 'data' directory
+        # at the root of this Hugo site.
+        # For more informtion take a look at the README.
+        title = "EXPLORE"
+
+        [params.portfolio.modal]
+            client = "Client"
+            date = "Date"
+            category = "Category"
+            buttontext = "Close"
+
+
+    [params.download]
+        title = "DOWNLOAD"
+        # The about text is splitted into a left and right column
+        news = "News:\n 1. (04/25/2021) VideoLT v1.0 is released.\n " 
+
+        describe = "Describe: \n 1. Feature size is [150,2048] for each video"
+
+        [params.download.button1]
+            text = "Raw Videos (2.1T)"
+            link = "//"
+            icon = "download"
+
+        [params.download.button0]
+            text = "Annotation"
+            link = "//"
+            icon = "download"
+
+        [params.download.button2]
+            text = "ResNet-50 Feature (295G)"
+            link = "//"
+            icon = "download"
+
+        [params.download.button3]
+            text = "ResNet-101 Feature (295G)"
+            link = "//"
+            icon = "download" 
+
+        [params.download.button4]
+            text = "TSM(ResNet-50) Feature (295G)"
+            link = "//"
+            icon = "download" 
+
+
+    [params.about]
+        title = "ABOUT"
+        [params.about.author1]
+            name = "Xing Zhang"
+        
+
+        [params.about.author2]
+            name = "Xing Zhang"
+
+        [params.about.author3]
+            name = "Xing Zhang"
+
+        # 'error' defines error messages for invalid inputs
+        [params.about.form.name]
+            text = "Name"
+            error = "Please enter your name."
+
+        [params.about.form.email]
+            text = "Email Address"
+            error = "Please enter your email address."
+
+        [params.about.form.phone]
+            text = "Affiliation"
+            error = "Please enter your affiliation."
+
+        [params.about.form.message]
+            text = "Message"
+            error = "Please enter a message."
+
+        [params.about.form.button]
+            text = "Send"
+            action = "https://formspree.io/f/xwkapzpz"
+            method = "POST"
+
+
+
+    [params.footer]
+        #copyright = "Published under the Apache License 2.0. Powered by [Hugo](//gohugo.io)."
+
+        [params.footer.location]
+            title = "Location"
+            # Postal address (add as many lines as necessary)
+            address = ["Fudan University, 1380 Guoquan North Road, Yangpu District, Shanghai, China"]
+
+#        [params.footer.social]
+#            title = ""
+#            # All icons using Fontawesome's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
+#            # for more icons. The icons are represented by their corresponding
+#            # CSS class.
+#            [[params.footer.social.networks]]
+#                icon = "fa-github"
+#                link = "//github.com/spf13/hugo"
+#
+#            [[params.footer.social.networks]]
+#                icon = "fa-stack-overflow"
+#                link=  "//stackoverflow.com/questions/tagged/hugo"
+#
+        [params.footer.power]
+            name1 = "Fudan University"
+            name2 = "University of Maryland"
+
+        [params.footer.contact]
+            title = "Contact"
+            text = "skyezx2018@gmail.com"
