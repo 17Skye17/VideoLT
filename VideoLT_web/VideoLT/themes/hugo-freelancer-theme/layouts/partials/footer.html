@@ -1,0 +1,51 @@
+{{ "<!-- Footer -->" | safeHTML }}
+<style>
+    .image img{ 
+        width: 160px;
+        height: 50px;
+
+        }
+</style>
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>{{ with .Site.Params.footer.location.title }}{{.}}{{ end }}</h3>
+
+                    {{ with .Site.Params.footer.location.address }}
+                        <p>
+                            {{ range $i, $e := $.Site.Params.footer.location.address }}
+                                {{ if $i }}<br>{{ end }}
+                                {{ $e }}
+                            {{ end }}
+                        </p>
+                    {{ end }}
+                </div>
+                <div class="footer-col col-md-4 image">
+                    <h3>Powered by</h3>
+                    <table>
+                        <td>
+                        <img class="img-responsive" src="img/fudan.png" alt="" style=margin-right:20px;></td>
+                        
+                        <td>
+                        <img class="img-responsive" src="img/umd.png" alt="" ></td>
+                    </table>
+                    <!-- <p>{{ with .Site.Params.footer.power.name1 }}{{ . | markdownify }}{{ end }}</p>
+                    <p>{{ with .Site.Params.footer.power.name2 }}{{ . | markdownify }}{{ end }}</p> -->
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>{{ with .Site.Params.footer.contact.title }}{{.}}{{ end }}</h3>
+                    <p>{{ with .Site.Params.footer.contact.text }}{{ . | markdownify }}{{ end }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{{ "<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->" | safeHTML }}
+<div class="scroll-top page-scroll visible-xs visible-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>

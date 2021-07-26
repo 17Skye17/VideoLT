@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictBindCallApply": true,
+
+        "esModuleInterop": true
+    },
+    "include": [
+        "**/*.ts"
+    ],
+    "exclude": [
+    ]
+}

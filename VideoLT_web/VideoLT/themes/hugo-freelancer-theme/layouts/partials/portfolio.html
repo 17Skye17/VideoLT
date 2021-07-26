@@ -1,0 +1,103 @@
+{{ "<!-- portfolio Grid Section -->" | safeHTML }}
+<style>
+    .center {
+        text-align:center;
+        line-height:15px;
+    }
+</style>
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>{{ with .Site.Params.portfolio.title }}{{.}}{{end}}</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal{{ 1 }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption center">
+                        <div class="caption-content">
+                            <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+                            <p>13 Top-level Entities</p>
+                            <p>48 Sub-level Entities</p>
+                        </div>
+                    </div>
+                    <img src="img/static/classes.png" class="img-responsive">
+                </a>
+            </div>
+
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal{{ 2 }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption  center">
+                        <div class="caption-content">
+                            <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+                            <p>Large-scale</p>
+                            <p>Manually Labeled</p>
+                            
+                        </div>
+                    </div>
+                    <img src="img/static/videos.png" class="img-responsive">
+                </a>
+            </div>
+
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal{{ 3 }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+                            <p>Untrimmed</p>
+                        </div>
+                    </div>
+                    <img src="img/static/duration.png" class="img-responsive">
+                </a>
+            </div> 
+
+        </div> 
+
+
+
+        <div class="row">
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal{{ 4 }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/dynamic/dist.png" class="img-responsive">
+                </a>
+            </div>
+
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal{{ 5 }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/dynamic/search.png" class="img-responsive">
+                </a>
+            </div>
+
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal{{ 6 }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/dynamic/taxonomy.png" class="img-responsive">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

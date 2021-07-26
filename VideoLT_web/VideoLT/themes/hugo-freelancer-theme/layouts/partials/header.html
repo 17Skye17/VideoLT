@@ -1,0 +1,36 @@
+{{ "<!-- Header -->" | safeHTML }}
+<style>
+    .background {
+        background-image: url(img/header.gif);
+        background-size: 1800px 750px;
+        background-position: center;}
+</style>
+
+
+<header class="background">
+
+    <div class="container" >
+
+        <div class="row" >
+
+            <div class="col-lg-12" >
+                <div class="intro-text">
+                    <span class="name">{{ with .Site.Params.header.name }}{{ . }}{{ end }}</span>
+                    <hr class="star-light">
+                    <span class="skills">{{ with .Site.Params.header.subtitle }}{{ . }}{{ end }}</span>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <a href="{{ with .Site.Params.header.button.link }}{{.}}{{ end }}" class="btn btn-lg btn-outline " style="margin-right:40px">
+                    <i class="fa fa-{{ with .Site.Params.header.button.icon }}{{.}}{{end}}"></i> {{ with .Site.Params.header.button.text }}{{ . }}{{ end }}
+                </a>
+                <a href="{{ with .Site.Params.header.github.link }}{{.}}{{ end }}" class="btn btn-lg btn-outline ">
+                    <i class="fa fa-{{ with .Site.Params.header.github.icon }}{{.}}{{end}}"></i> {{ with .Site.Params.header.github.text }}{{ . }}{{ end }}
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</header>
