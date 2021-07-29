@@ -1,5 +1,0 @@
-modalID: 4
-title:  Visualization of Long-tailed Distribution
-img: dist.png
-description1: Histogram of class frequency of VideoLT
-description2: Compare with existing video recognition datasets in logarithmic coordinate system
