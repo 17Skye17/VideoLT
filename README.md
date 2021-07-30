@@ -15,7 +15,7 @@ Code for paper in ICCV2021: [VideoLT: Large-scale Long-tailed Video Recognition]
 - [Class-balanced Loss](https://arxiv.org/abs/1901.05555)
 - [LDAM Loss](https://arxiv.org/abs/1906.07413)
 - [EQL](https://arxiv.org/abs/2003.05176)
-- [$\tau$-normalization](https://arxiv.org/abs/1910.09217)
+- [tau-normalization](https://arxiv.org/abs/1910.09217)
 - [cRT](https://arxiv.org/abs/1910.09217)
 - [LWS](https://arxiv.org/abs/1910.09217)
 - FrameStack
