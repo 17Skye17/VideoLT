@@ -1,5 +1,5 @@
 # **Pytorch Code for VideoLT**
-##### Website: [https://videolt.github.io/](https://videolt.github.io/)
+Website: [https://videolt.github.io/](https://videolt.github.io/)
 Code for paper in ICCV2021: [VideoLT: Large-scale Long-tailed Video Recognition](https://arxiv.org/abs/2105.02668)
 ### **Updates**
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for accessing.
