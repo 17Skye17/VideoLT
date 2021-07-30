@@ -26,7 +26,7 @@ Please visit [https://videolt.github.io/](https://videolt.github.io/) to obtain 
 
 ## Model Zoo
 
-The baseline scripts, logs and checkpoints are provided in MODELZOO.md.
+The baseline scripts, logs and checkpoints are provided in [MODELZOO.md](MODELZOO.md).
 
 ## Usage
 
