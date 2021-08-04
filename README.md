@@ -24,6 +24,8 @@ Code for paper in ICCV2021: [VideoLT: Large-scale Long-tailed Video Recognition]
 
 Please visit [https://videolt.github.io/](https://videolt.github.io/) to obtain download links. We provide raw videos and extracted features.
 
+For using extracted features, please modify dataset/dutils.py and set the correct path to features.
+
 ## Model Zoo
 
 The baseline scripts, logs and checkpoints are provided in [MODELZOO.md](MODELZOO.md).
