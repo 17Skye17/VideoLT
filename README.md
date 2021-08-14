@@ -2,6 +2,8 @@
 Website: [https://videolt.github.io/](https://videolt.github.io/)
 
 Code for paper in ICCV2021: [VideoLT: Large-scale Long-tailed Video Recognition](https://arxiv.org/abs/2105.02668)
+<img src="https://github.com/17Skye17/tree/master/concept.pdf", alt="concept">
+
 ## Updates
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
 - [07/23/2021] VideoLT is accepted by ICCV2021.
@@ -26,6 +28,10 @@ For using extracted features, please modify dataset/dutils.py and set the correc
 ## Model Zoo
 
 The baseline scripts, logs and checkpoints are provided in [MODELZOO.md](MODELZOO.md).
+
+## FrameStack
+
+TODO: add picture
 
 ## Usage
 
