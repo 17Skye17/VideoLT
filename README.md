@@ -2,7 +2,7 @@
 Website: [https://videolt.github.io/](https://videolt.github.io/)
 
 Code for paper in ICCV2021: [VideoLT: Large-scale Long-tailed Video Recognition](https://arxiv.org/abs/2105.02668)
-<img src="https://github.com/17Skye17/tree/master/concept.pdf", alt="concept">
+<img src="https://github.com/17Skye17/tree/master/concept.png", alt="concept">
 
 ## Updates
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
