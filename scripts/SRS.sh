@@ -4,7 +4,6 @@ FEATURE_NAME='ResNet101'
 export CUDA_VISIBLE_DEVICES='2'
 python base_main.py  \
      --resample 'SRS' \
-     --reduce 'none' \
      --feature_name $FEATURE_NAME \
      --lr 0.0001 \
      --gd 20 --lr_steps 30 60 --epochs 100 \

@@ -19,7 +19,7 @@ from tools import utils
 
 from dataset import dutils
 from models import models
-from dataset.feature_loader import BasicDataset
+from ops.feature_loader import BasicDataset, ResamplingDataset_Mask
 
 def setup_seed(seed):
     np.random.seed(seed)
@@ -60,9 +60,14 @@ def save_checkpoint(state, is_best):
 def load_data(num_class, input_dir):
     train_list = open(args.train_list, 'r').readlines()
     val_list = open(args.val_list, 'r').readlines()
-
-    train_dataset = BasicDataset(train_list, input_dir, args.train_num_frames, cls_num=args.num_class, train_mode=True)
-    val_dataset = BasicDataset(val_list, input_dir, args.val_num_frames, cls_num=args.num_class, train_mode=False)
+    
+    if args.resample == 'None':
+        train_dataset = BasicDataset(train_list, input_dir, args.train_num_frames, cls_num=args.num_class, train_mode=True)
+    else:
+        train_dataset = ResamplingDataset_Mask(train_list, input_dir, args.train_num_frames, \
+            rstype=args.resample, cls_num=args.num_class, train_mode=True)
+    val_dataset = BasicDataset(val_list, input_dir, args.val_num_frames, \
+            cls_num=args.num_class, train_mode=False)
 
     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, \
                         shuffle=True, num_workers=args.workers, pin_memory=True)
@@ -79,9 +84,13 @@ def main():
     args = parser.parse_args()
     start_epoch = args.start_epoch 
     num_class = args.num_class
+    
+    if args.resample != 'None':
+        args.reduce = "none"
+
     print ("########################################################################\n")
-    print ("Feature name: {} \nNumber of class: {} \nTrain frames: {} \nVal frames: {}\n".\
-            format(args.feature_name, args.num_class, args.train_num_frames, args.val_num_frames))
+    print ("Feature name: {} \nNumber of class: {} \nTrain frames: {} \nVal frames: {}\nReduction: {}".\
+            format(args.feature_name, args.num_class, args.train_num_frames, args.val_num_frames, args.reduce))
     print ("Applied long-tailed strategies: \n")
     print ("\tAugmentation: {} \t Re-weighting: {} \t Re-sampling: {} \n". \
             format("FrameStack", args.loss_func, args.resample))
@@ -91,6 +100,7 @@ def main():
     
     input_dir =  dutils.get_feature_path(args.feature_name)
     feature_dim = dutils.get_feature_dim(args.feature_name)
+    args.lc_list, args.train_list, args.val_list = dutils.get_label_path()
 
     train_loader, val_loader = load_data(num_class, input_dir)
 
@@ -132,11 +142,15 @@ def main():
     for epoch in range(start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch, args.lr_type, args.lr_steps)
         print ("Training for Epoch {}".format(epoch))
-        if epoch <= args.warm_epoch:
+        #if epoch <= args.warm_epoch:
+        #ap = train(train_loader, model, epoch, log_training, indices, ap)
+        if epoch > args.warm_epoch:
+        #else:
+            print("Start dynamic training for epoch {}......\n".format(epoch))
+        if args.resample == 'None':
             ap = train(train_loader, model, epoch, log_training, indices, ap)
         else:
-            print("Start dynamic training for epoch {}......\n".format(epoch))
-            ap = train(train_loader, model, epoch, log_training, indices, ap)
+            ap = rs_train(train_loader, model, epoch, log_training, indices, ap)
 
         if (epoch + 1) % args.eval_freq == 0 or epoch == args.epochs - 1:
             acc1, acc5, mAP = validate(val_loader, model, epoch, log_training, indices)
@@ -282,6 +296,86 @@ def validate(loader, model, epoch, log, indices):
         tf_writer.add_scalar('acc/test_top5', top5.avg, epoch)
         tf_writer.add_scalar('mAP/test', mAP.avg(), epoch)
     return top1.avg, top5.avg, mAP.avg()    
+
+
+def rs_train(loader, model, epoch, log, indices, ap=0):
+    batch_time = AverageMeter()
+    data_time = AverageMeter()
+    losses = AverageMeter()
+    top1 = AverageMeter()
+    top5 = AverageMeter()
+    mAP = mAPMeter()
+    
+    model.train()
+    end = time.time()
+    
+    if args.loss_func == 'LDAM':
+        criterion.reset_epoch(epoch)
+
+    print ("Ap for epoch {}: {}".format(epoch, ap))
+    for i, (vid, feature, target, mask) in enumerate(loader):
+        feature = feature.cuda()
+        target = target.float().cuda(non_blocking=True)
+        mask = mask.float().cuda()
+
+        if epoch <= args.warm_epoch:
+            prediction, output = model(feature)
+            loss = criterion(output, target)
+        else:
+            if args.ratio > 0:
+                batch_size = feature.size(0)
+                split_samples = int(batch_size * args.ratio)
+                mixed_input, mixed_target = Augment.FrameStack(feature[:split_samples], target[:split_samples], args.clip_length, ap)
+                mixed_input = torch.cat((mixed_input, feature[split_samples:]),dim=0)
+                mixed_target = torch.cat((mixed_target, target[split_samples:]),dim=0)
+            else:
+                mixed_input, mixed_target = Augment.FrameStack(feature, target, args.clip_length, ap)
+                
+            prediction, output = model(mixed_input)  
+            loss = criterion(output, mixed_target)
+        
+        loss = loss * mask
+        loss = torch.mean(torch.sum(loss, 1))
+        losses.update(loss.item(), output.size(0))
+
+        with torch.no_grad():
+            prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
+            top1.update(prec1, output.size(0))
+            top5.update(prec5, output.size(0))
+            prediction, output = model(feature)
+            mAP.add(prediction, target)
+
+        loss.backward()
+
+        if args.clip_gradient is not None:
+            total_norm = clip_grad_norm_(model.parameters(), args.clip_gradient)
+        
+        optimizer.step()
+        optimizer.zero_grad()
+
+        batch_time.update(time.time() - end)
+        end = time.time()
+
+        if i % args.print_freq == 0:
+            output = ('Epoch: [{0}][{1}/{2}], lr: {lr:.5f}\t'
+                      'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
+                      'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
+                      'Prec@1 {top1.val:.3f} ({top1.avg:.3f})\t'
+                      'Prec@5 {top5.val:.3f} ({top5.avg:.3f})\n'
+                      .format(
+                epoch, i, len(loader), batch_time=batch_time,
+                data_time=data_time, loss=losses, top1=top1, top5=top5, lr=optimizer.param_groups[-1]['lr']))  # TODO
+            print(output)
+            
+            log.write(output)
+            log.flush()
+    tf_writer.add_scalar('loss/train_epoch', losses.avg, epoch)
+    tf_writer.add_scalar('acc/train_top1', top1.avg, epoch)
+    tf_writer.add_scalar('acc/train_top5', top5.avg, epoch)
+    tf_writer.add_scalar('lr', optimizer.param_groups[-1]['lr'], epoch)
+    train_ap = mAP.value()
+    print ("mAP = ", mAP.avg()) 
+    return train_ap
 
 if __name__=='__main__':
     main()

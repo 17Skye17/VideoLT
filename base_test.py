@@ -50,9 +50,6 @@ def main():
     print ("########################################################################\n")
     print ("Feature name: {} \nNumber of class: {} \nTrain frames: {} \nVal frames: {}\n".\
             format(args.feature_name, args.num_class, args.train_num_frames, args.val_num_frames))
-    print ("Applied long-tailed strategies: \n")
-    print ("\tAugmentation: {} \t Re-weighting: {} \t Re-sampling: {} \n". \
-            format(args.augment, args.loss_func, args.resample))
     print ("######################################################################## \n") 
 
     setup_seed(args.seed)
@@ -60,11 +57,13 @@ def main():
 
     criterion = utils.find_class_by_name(args.loss_func, [losses])(args, logits=True, reduce=args.reduce)
     
-    indices = utils.get_indices(args.lc_list, head=args.head, tail=args.tail)
     
     input_dir = dutils.get_feature_path(args.feature_name)
     feature_dim = dutils.get_feature_dim(args.feature_name)
+    args.lc_list, args.train_list, args.val_list = dutils.get_label_path()
+
     
+    indices = utils.get_indices(args.lc_list, head=args.head, tail=args.tail)
     train_loader, val_loader = load_data(num_class, input_dir)
     model = utils.find_class_by_name(args.model_name, [models])(feature_dim, num_class) 
     model = model.cuda()

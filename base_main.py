@@ -86,9 +86,11 @@ def main():
     args = parser.parse_args()
     start_epoch = args.start_epoch     
     num_class = args.num_class
+    if args.resample != 'None':
+        args.reduce = "none"
     print ("########################################################################\n")
-    print ("Feature name: {} \nNumber of class: {} \nTrain frames: {} \nVal frames: {}\n".\
-            format(args.feature_name, args.num_class, args.train_num_frames, args.val_num_frames))
+    print ("Feature name: {} \nNumber of class: {} \nTrain frames: {} \nVal frames: {}\nReduction: {}".\
+            format(args.feature_name, args.num_class, args.train_num_frames, args.val_num_frames, args.reduce))
     print ("Applied long-tailed strategies: \n")
     print ("\tAugmentation: {} \t Re-weighting: {} \t Re-sampling: {} \n". \
             format(args.augment, args.loss_func, args.resample))
@@ -98,6 +100,7 @@ def main():
 
     input_dir =  dutils.get_feature_path(args.feature_name)
     feature_dim = dutils.get_feature_dim(args.feature_name)
+    args.lc_list, args.train_list, args.val_list = dutils.get_label_path()
 
     train_loader, val_loader = load_data(num_class, input_dir)
 
