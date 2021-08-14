@@ -1,11 +1,6 @@
-# Pytorch Code for VideoLT
-Website: [https://videolt.github.io/](https://videolt.github.io/)
+# Pytorch Code for VideoLT [Website](https://videolt.github.io/)[Paper](https://arxiv.org/abs/2105.02668)
 
-Code for paper in ICCV2021: [VideoLT: Large-scale Long-tailed Video Recognition](https://arxiv.org/abs/2105.02668)
-
-<p align="center">
 <img src="https://github.com/17Skye17/VideoLT/blob/master/pics/concept.png" width="400" alt="concept">
-</p>
 
 ## Updates
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
@@ -34,7 +29,9 @@ The baseline scripts, logs and checkpoints are provided in [MODELZOO.md](MODELZO
 
 ## FrameStack
 
-TODO: add picture
+FrameStack is simple yet effective approach for long-tailed video recognition which re-samples training data at the frame level and adopts a dynamic sampling strategy based on knowledge learned by the network. The rationale behind FrameStack is to dynamically sample more frames from videos in tail classes and use fewer frames for those from head classes.
+
+<img src="https://github.com/17Skye17/VideoLT/blob/master/pics/framestack.png" width="400" alt="framestack">
 
 ## Usage
 
