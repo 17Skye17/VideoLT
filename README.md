@@ -4,7 +4,7 @@
 
 
 ## Updates
-- [08/15/2021] Code released. 
+- [08/15/2021] Code released. Dataset download links and checkpoints links will be updated in a week.
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
 - [07/23/2021] VideoLT is accepted by ICCV2021.
 
