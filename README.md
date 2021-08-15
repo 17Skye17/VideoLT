@@ -21,7 +21,7 @@
 
 Please visit [https://videolt.github.io/](https://videolt.github.io/) to obtain download links. We provide raw videos and extracted features.
 
-For using extracted features, please modify dataset/dutils.py and set the correct path to features.
+For using extracted features, please modify `dataset/dutils.py` and set the correct path to features.
 
 ## Model Zoo
 

@@ -142,10 +142,7 @@ def main():
     for epoch in range(start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch, args.lr_type, args.lr_steps)
         print ("Training for Epoch {}".format(epoch))
-        #if epoch <= args.warm_epoch:
-        #ap = train(train_loader, model, epoch, log_training, indices, ap)
         if epoch > args.warm_epoch:
-        #else:
             print("Start dynamic training for epoch {}......\n".format(epoch))
         if args.resample == 'None':
             ap = train(train_loader, model, epoch, log_training, indices, ap)
