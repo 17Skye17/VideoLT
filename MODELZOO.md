@@ -12,3 +12,15 @@ SRS | 0.516 | 0.680 | 0.568 | 0.399 | [SRS.sh](https://github.com/17Skye17/Video
 CB Loss | 0.511 | 0.665 | 0.561 | 0.398 | [cbloss.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/cbloss.sh) | link
 mixup | 0.495 | 0.660 | 0.546 | 0.381 | [mixup.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/mixup.sh) | link
 FrameStack | **0.532** |  **0.695** | **0.584** | **0.417** | [framestack.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/framestack.sh) | link
+
+
+## ResNet-50
+
+Methods | Overall | Head[500, +INF) | Medium[100, 500) | Tail[0,100) | Checkpoint
+-|-|-|-|-|-|-
+Baseline | 0.499 | 0.675 | 0.553 | 0.376 | link
+
+
+
+
+## TSM R-50
