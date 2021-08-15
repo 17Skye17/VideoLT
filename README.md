@@ -1,4 +1,4 @@
-# Pytorch Code for VideoLT [Website](https://videolt.github.io/)[Paper](https://arxiv.org/abs/2105.02668)
+# Pytorch Code for VideoLT [[Website](https://videolt.github.io/)][[Paper](https://arxiv.org/abs/2105.02668)]
 
 <img src="https://github.com/17Skye17/VideoLT/blob/master/pics/concept.png" width="400" alt="concept">
 
@@ -25,7 +25,7 @@ For using extracted features, please modify dataset/dutils.py and set the correc
 
 ## Model Zoo
 
-The baseline scripts, logs and checkpoints are provided in [MODELZOO.md](MODELZOO.md).
+The baseline scripts and checkpoints are provided in [MODELZOO.md](MODELZOO.md).
 
 ## FrameStack
 
