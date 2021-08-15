@@ -11,4 +11,4 @@ CBS | 0.507 | 0.660 | 0.559 | 0.390 | [CBS.sh](https://github.com/17Skye17/Video
 SRS | 0.516 | 0.680 | 0.568 | 0.399 | [SRS.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/SRS.sh) | link
 CB Loss | 0.511 | 0.665 | 0.561 | 0.398 | [cbloss.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/cbloss.sh) | link
 mixup | 0.495 | 0.660 | 0.546 | 0.381 | [mixup.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/mixup.sh) | link
-FrameStack | 0.532 |  0.695 | 0.584 | 0.417 | [framestack.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/framestack.sh) | link
+FrameStack | **0.532** |  **0.695** | **0.584** | **0.417** | [framestack.sh](https://github.com/17Skye17/VideoLT/blob/master/scripts/framestack.sh) | link
