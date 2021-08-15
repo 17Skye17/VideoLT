@@ -1,5 +1,5 @@
 FEATURE_NAME='ResNet101'
-CKPT='/DATACENTER/raid0/skye/ResNet101-checkpoints/ResNet101_bs128_lr0.0001_lateavg_mixup/ckpt.best.pth.tar'
+CKPT='/DATACENTER/raid0/skye/VideoLT_checkpoints/ResNet-101/ResNet101_bs128_lr0.0001_lateavg_mixup/ckpt.best.pth.tar'
 
 export CUDA_VISIBLE_DEVICES='1'
 python base_test.py \

@@ -17,10 +17,25 @@ FrameStack | **0.532** |  **0.695** | **0.584** | **0.417** | [framestack.sh](ht
 ## ResNet-50
 
 Methods | Overall | Head[500, +INF) | Medium[100, 500) | Tail[0,100) | Checkpoint
--|-|-|-|-|-|-
+-|-|-|-|-|-
 Baseline | 0.499 | 0.675 | 0.553 | 0.376 | link
+LDAM + DRW | 0.502 | 0.680 | 0.557 | 0.378 | link
+EQL | 0.502 | 0.679 | 0.557 | 0.378 | link
+CBS | 0.491 | 0.649 | 0.545 | 0.371 | link
+SRS | 0.486 | 0.655 | 0.539 | 0.365 | link
+CB Loss | 0.495 | 0.653 | 0.546 | 0.381 | link
+mixup | 0.484 | 0.649 | 0.535 | 0.368 | link
+FrameStack | **0.516** | **0.683** | **0.569** | **0.397** | link
 
 
+## TSM (ResNet-50)
 
-
-## TSM R-50
+Methods | Overall | Head[500, +INF) | Medium[100, 500) | Tail[0,100) | Checkpoint
+-|-|-|-|-|-
+Baseline | 0.565 | 0.757 | 0.620 | 0.436 | link
+LDAM + DRW | 0.565 | 0.750 | 0.620 | 0.439 | link
+EQL | 0.567 | 0.757 | 0.623 | 0.439 | link
+CBS | 0.558 | 0.733 | 0.612 | 0.435 | link
+CB Loss | 0.563 | 0.744 | 0.616 | 0.440 | link
+mixup | 0.548 | 0.736 | 0.602 | 0.425 | link
+FrameStack | **0.580** |  **0.759** | **0.632** | **0.459** | link
