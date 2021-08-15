@@ -1,10 +1,14 @@
-# Pytorch Code for VideoLT [[Website](https://videolt.github.io/)][[Paper](https://arxiv.org/abs/2105.02668)]
+# Pytorch Code for VideoLT 
 
-<img src="https://github.com/17Skye17/VideoLT/blob/master/pics/concept.png" width="400" alt="concept">
+## [[Website](https://videolt.github.io/)][[Paper](https://arxiv.org/abs/2105.02668)]
+
 
 ## Updates
+- [08/15/2021] Code released. 
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
 - [07/23/2021] VideoLT is accepted by ICCV2021.
+
+<img src="https://github.com/17Skye17/VideoLT/blob/master/pics/concept.png" width="400" alt="concept">
 
 ## Overview
 
