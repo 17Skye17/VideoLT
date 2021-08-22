@@ -37,5 +37,5 @@ LDAM + DRW | 0.565 | 0.750 | 0.620 | 0.439 | link
 EQL | 0.567 | 0.757 | 0.623 | 0.439 | link
 CBS | 0.558 | 0.733 | 0.612 | 0.435 | link
 CB Loss | 0.563 | 0.744 | 0.616 | 0.440 | link
-mixup | 0.548 | 0.736 | 0.602 | 0.425 | [checkpoint](https://drive.google.com/file/d/1qIdX88KbsVrdfQh1yzZziDUaTHSOLotc/view?usp=sharing)
+mixup | 0.548 | 0.736 | 0.602 | 0.425 | link
 FrameStack | **0.580** |  **0.759** | **0.632** | **0.459** | link
