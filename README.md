@@ -4,7 +4,8 @@
 
 
 ## Updates
-- [09/28/2021] Features uploaded to Aliyun Drive, for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
+- [10/29/2021] Features uploaded to Google Drive, for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
+- [09/28/2021] Features uploaded to Aliyun Drive(deprecated), for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
 - [08/23/2021] Checkpoint links uploaded, sorry we are handling campus network bandwidth limitation, dataset will be released in this weeek.
 - [08/15/2021] Code released. Dataset download links and checkpoints links will be updated in a week.
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
