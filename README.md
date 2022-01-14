@@ -4,6 +4,7 @@
 
 
 ## Updates
+- [01/14/2022] Raw videos uploaded to Google Drive, for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
 - [10/29/2021] Features uploaded to Google Drive, for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
 - [09/28/2021] Features uploaded to Aliyun Drive(deprecated), for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
 - [08/23/2021] Checkpoint links uploaded, sorry we are handling campus network bandwidth limitation, dataset will be released in this weeek.
@@ -26,7 +27,7 @@
 
 ## Data Preparation
 
-Please visit [https://videolt.github.io/](https://videolt.github.io/) to obtain download links. We provide raw videos and extracted features.
+Please be aware that VideoLT is only for **non-commercial** use, please send us an e-mail and agree to our license, then we will send back the download links to you. We provide raw videos(~1.7TB) and extracted features(~900GB).
 
 For using extracted features, please modify `dataset/dutils.py` and set the correct path to features.
 
