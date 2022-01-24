@@ -27,7 +27,14 @@
 
 ## Data Preparation
 
-Please be aware that VideoLT is only for **non-commercial** use, please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn) and agree to our license, then we will send back the download links to you. We provide raw videos(~1.7TB) and extracted features(~900GB).
+Please be aware that VideoLT is only for **non-commercial** use, please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn) and agree to our license, then we will send back the download links to you. We provide raw videos(~1.7TB) and extracted features(~900GB in total, ~295GB for each).
+
+To decompress the `.tar.gz` files, please use commands:
+```
+cat TSM-R50-feature.tar.gz.part* | tar zx 
+cat ResNet50-feature.tar.gz.part* | tar zx
+cat ResNet101-feature.tar.gz.part* | tar zx
+```
 
 For using extracted features, please modify `dataset/dutils.py` and set the correct path to features.
 
