@@ -140,13 +140,13 @@ python base_test.py \
 If you find VideoLT helpful for your research, please consider citing:
 
 ```
-@misc{zhang2021videolt,
-title={VideoLT: Large-scale Long-tailed Video Recognition}, 
-author={Xing Zhang and Zuxuan Wu and Zejia Weng and Huazhu Fu and Jingjing Chen and Yu-Gang Jiang and Larry Davis},
-year={2021},
-eprint={2105.02668},
-archivePrefix={arXiv},
-primaryClass={cs.CV}
+@InProceedings{Zhang_2021_ICCV,
+    author    = {Zhang, Xing and Wu, Zuxuan and Weng, Zejia and Fu, Huazhu and Chen, Jingjing and Jiang, Yu-Gang and Davis, Larry S.},
+    title     = {VideoLT: Large-Scale Long-Tailed Video Recognition},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {7960-7969}
 }
 ```
 
