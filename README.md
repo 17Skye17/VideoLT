@@ -4,9 +4,9 @@
 
 
 ## Updates
-- [01/14/2022] Raw videos uploaded to Google Drive, for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
-- [10/29/2021] Features uploaded to Google Drive, for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
-- [09/28/2021] Features uploaded to Aliyun Drive(deprecated), for access please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn)
+- [01/14/2022] Raw videos uploaded to Google Drive, for access please send us an e-mail: [zxwu at fudan.edu.cn](zxwu@fudan.edu.cn)
+- [10/29/2021] Features uploaded to Google Drive, for access please send us an e-mail: [zxwu at fudan.edu.cn](zxwu@fudan.edu.cn)
+- [09/28/2021] Features uploaded to Aliyun Drive(deprecated), for access please send us an e-mail: [zxwu at fudan.edu.cn](zxwu@fudan.edu.cn)
 - [08/23/2021] Checkpoint links uploaded, sorry we are handling campus network bandwidth limitation, dataset will be released in this weeek.
 - [08/15/2021] Code released. Dataset download links and checkpoints links will be updated in a week.
 - [07/29/2021] Dataset released, visit [https://videolt.github.io/](https://videolt.github.io/) for downloading.
@@ -27,7 +27,7 @@
 
 ## Data Preparation
 
-Please be aware that VideoLT is only for **non-commercial** use, please send us an e-mail: [zhangxing18 at fudan.edu.cn](zhangxing18@fudan.edu.cn) and agree to our license, then we will send back the download links to you. We provide raw videos(~1.7TB) and extracted features(~900GB in total, ~295GB for each).
+Please be aware that VideoLT is only for **non-commercial** use, please send us an e-mail: [zxwu at fudan.edu.cn](zxwu@fudan.edu.cn) and agree to our license, then we will send back the download links to you. We provide raw videos(~1.7TB) and extracted features(~900GB in total, ~295GB for each).
 
 To decompress the `.tar.gz` files, please use commands:
 ```
